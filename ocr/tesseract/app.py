@@ -17,7 +17,6 @@ def ocr():
         return jsonify({'error': 'No selected file'}), 400
 
     if file:
-        # Read the image via file.stream
         img = Image.open(io.BytesIO(file.read()))
         text = pytesseract.image_to_string(img, lang='eng')
 
