@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ubuntu_env:
+    build: .
+    volumes:
+      - D:\:/data
+    stdin_open: true
+    tty: true
