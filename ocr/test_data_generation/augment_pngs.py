@@ -32,7 +32,7 @@ for im_name in images:
         markup_thickness_range=(1, 7),
         markup_type='random',
         markup_ink='random',
-        markup_color='random',
+        markup_color=(0, 0, 0),
         large_word_mode='random',
         single_word_mode=False,
         repetitions=1
