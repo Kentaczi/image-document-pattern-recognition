@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  streamlit-app:
+    build:
+      context: ./object_detection_text
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - ocr_port=5000
+      - ip_or_service_addres=ocr-service
+    depends_on:
+      - ocr-service
+
+  ocr-service:
+    build:
+      context: ./ocr/docker_wrappers_ocr/ocrmypdf
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
