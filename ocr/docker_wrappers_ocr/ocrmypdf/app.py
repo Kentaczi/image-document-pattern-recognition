@@ -33,7 +33,7 @@ def ocr():
         grep_result = subprocess.run(['pdfgrep', '.', output_pdf_path], capture_output=True, text=True)
         extracted_text = grep_result.stdout
 
-        response = jsonify({'extracted_text': extracted_text})
+        response = jsonify({'text': extracted_text})
     except subprocess.CalledProcessError as e:
         response = jsonify({'error': 'Processing failed', 'details': str(e)}), 500
     finally:
